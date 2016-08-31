@@ -1,0 +1,36 @@
+{
+  "name": "npm-to-github",
+  "version": "1.0.0",
+  "description": "Get the GitHub repository from a npm package",
+  "keywords": [
+    "github",
+    "repository",
+    "npm",
+    "package"
+  ],
+  "homepage": "https://github.com/OlivierCoilland/npm-to-github#readme",
+  "bugs": "https://github.com/OlivierCoilland/npm-to-github/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Olivier Coilland",
+    "url": "https://github.com/OlivierCoilland"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlivierCoilland/npm-to-github.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "npm-registry-client": "7.1.2",
+    "npmlog": "4.0.0",
+    "octonode": "0.7.6"
+  },
+  "devDependencies": {
+    "eslint": "3.4.0"
+  }
+}
