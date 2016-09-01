@@ -23,7 +23,7 @@ npmToGitHub.getRepositoryName('npm-to-github')
 })
 .catch((error) => {
     console.log(error);
-})
+});
 ```
 
 ### Get repository data
@@ -35,7 +35,7 @@ npmToGitHub.getRepository('npm-to-github')
 })
 .catch((error) => {
     console.log(error);
-})
+});
 ```
 
 ## License
