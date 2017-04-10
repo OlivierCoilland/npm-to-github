@@ -28,6 +28,11 @@ function getRepositoryName(pkg) {
             }
 
             const repositoryUrl = repository.url;
+            if (!repositoryUrl) {
+                reject('No repository URL present in package.json');
+                return;
+            }
+
             const matches = repositoryUrl.match(GITHUB_REPOSITORY_RE);
             if (!matches) {
                 reject('No GitHub repository found in ' + repositoryUrl);
