@@ -43,4 +43,3 @@ rules:
   prefer-arrow-callback: 1
   arrow-parens: 1
   semi: [2, "always"]
-
