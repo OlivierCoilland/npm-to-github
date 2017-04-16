@@ -17,25 +17,25 @@ function getRepositoryName(pkg) {
     return new Promise((resolve, reject) => {
         npmClient.get(NPM_REGISTRY_ROOT + pkg, {}, (error, data) => {
             if (error) {
-                reject(error.message);
+                reject(error);
                 return;
             }
 
             const repository = data.repository;
             if (!repository) {
-                reject('No repository defined in package.json');
+                reject(new Error('No repository defined in package.json'));
                 return;
             }
 
             const repositoryUrl = repository.url;
             if (!repositoryUrl) {
-                reject('No repository URL present in package.json');
+                reject(new Error('No repository URL present in package.json'));
                 return;
             }
 
             const matches = repositoryUrl.match(GITHUB_REPOSITORY_RE);
             if (!matches) {
-                reject('No GitHub repository found in ' + repositoryUrl);
+                reject(new Error('No GitHub repository found in ' + repositoryUrl));
                 return;
             }
 
@@ -51,7 +51,7 @@ function getRepository(pkg) {
         .then((name) => {
             githubClient.repo(name).info((error, data) => {
                 if (error) {
-                    reject(error.message);
+                    reject(error);
                     return;
                 }
 
