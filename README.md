@@ -38,6 +38,11 @@ npmToGitHub.getRepository('npm-to-github')
 });
 ```
 
+## Incompatible API changes! (f34r)
+
+In `1.x.x` errors where not really errors, only a message.
+In `2.x.x` errors are full `Error` objects.
+
 ## License
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
