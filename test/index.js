@@ -36,5 +36,3 @@ describe('npm-to-github', function() {
         });
     });
 });
-
-
