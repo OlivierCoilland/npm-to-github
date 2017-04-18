@@ -11,7 +11,8 @@ const npmClient = new RegClient({
     log: log
 });
 const github = require('octonode');
-const githubClient = github.client();
+
+let githubClient = github.client();
 
 function getRepositoryName(pkg) {
     return new Promise((resolve, reject) => {
@@ -64,5 +65,10 @@ function getRepository(pkg) {
     });
 }
 
+function setToken(token) {
+    githubClient = github.client(token);
+}
+
 module.exports.getRepositoryName = getRepositoryName;
 module.exports.getRepository = getRepository;
+module.exports.setToken = setToken;
