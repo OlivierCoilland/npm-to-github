@@ -27,12 +27,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "npm-registry-client": "8.1.1",
-    "npmlog": "4.0.2",
-    "octonode": "0.7.11"
+    "npm-registry-client": "8.3.0",
+    "npmlog": "4.1.0",
+    "octonode": "0.7.13"
   },
   "devDependencies": {
     "eslint": "3.19.0",
-    "mocha": "3.2.0"
+    "mocha": "3.4.2"
   }
 }
