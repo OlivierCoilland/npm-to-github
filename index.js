@@ -49,19 +49,19 @@ function getRepositoryName(pkg) {
 function getRepository(pkg) {
     return new Promise((resolve, reject) => {
         getRepositoryName(pkg)
-        .then((name) => {
-            githubClient.repo(name).info((error, data) => {
-                if (error) {
-                    reject(error);
-                    return;
-                }
+            .then((name) => {
+                githubClient.repo(name).info((error, data) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
 
-                resolve(data);
+                    resolve(data);
+                });
+            })
+            .catch((error) => {
+                reject(error);
             });
-        })
-        .catch((error) => {
-            reject(error);
-        });
     });
 }
 
